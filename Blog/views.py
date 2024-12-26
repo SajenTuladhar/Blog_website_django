@@ -9,6 +9,6 @@ def mainpage(request):
 
 def posts(request):
     return render(request,"blog/postsPage.html")
-
+ 
 def post_details(request):
     return HttpResponse("the detail of this post is here")
