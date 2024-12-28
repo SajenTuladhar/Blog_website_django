@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{%load static%}
+
+{% block title %} 
+This post Title
+{% endblock %} 
+
+{% block css %}
+  <link rel="stylesheet" href="{% static "blog/post-details.css" %}" />
+{% endblock %}
+
+{% block content %}
+<section id = "summary">
+    <h2>Post Title</h2>
+    <article>
+        <img src="{%static "blog/images/city.jpg"%}" alt= "post title"/>
+        <address>By Sajen</address>
+        <div>
+            Last Updated on <time> December 26th</time>
+    </article>
+</section>
+
+<main> 
+    <p>
+        {% lorem 1 b random %}
+    </p>
+    <p>
+        {% lorem 1 b random %}
+    </p>
+    <p>
+        {% lorem 1 b random %}
+    </p>
+    <p>
+        {% lorem 1 b random %}
+    </p>
+
+
+</main>
+{%endblock%}
