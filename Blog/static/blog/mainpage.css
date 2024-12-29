@@ -1,9 +1,9 @@
 #welcome {
-    background: linear-gradient(to right top, #6305dd, #390281);
+    background: linear-gradient(to right top, #0e0817, #0e0618);
     padding: 6rem 12%;
   }
   
-  #welcome header {
+  #welcome hea  der {
     display: flex;
     align-items: flex-start;
     margin: 3rem auto;

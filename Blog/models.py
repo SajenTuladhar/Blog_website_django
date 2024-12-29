@@ -11,7 +11,7 @@ class Author(models.Model):
         return f"{self.first_name} {self.last_name}"
     
 
-class Tags(models.Model):
+class Tag(models.Model):
     Caption= models.CharField(max_length=40)
     
     def __str__(self):
@@ -25,7 +25,7 @@ class Posts(models.Model):
     slug=models.SlugField(unique=True)
     content=models.TextField(validators=[MinLengthValidator(50)])
     author=models.ForeignKey(Author,on_delete=models.SET_NULL,related_name="posts",null=True)
-    tags= models.ManyToManyField(Tags)
+    tags= models.ManyToManyField(Tag)
 
     def __str__(self):
         return f"{self.title} ,{self.date}"
