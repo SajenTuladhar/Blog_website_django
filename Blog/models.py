@@ -8,10 +8,10 @@ class Author(models.Model):
     E_mail=models.EmailField()
     
     def __str__(self):
-        return f"{self.first_name} {self.last_name},{self.E_mail}"
+        return f"{self.first_name} {self.last_name}"
     
 
-class Tag(models.Model):
+class Tags(models.Model):
     Caption= models.CharField(max_length=40)
     
     def __str__(self):
@@ -22,9 +22,10 @@ class Posts(models.Model):
     excerpt= models.CharField(max_length=200)
     image_name= models.CharField(max_length=100)
     date= models.DateField(auto_now=True)
-    slug=models.SlugField(unique=True)
+    slug=models.SlugField(unique=True,)
     content=models.TextField(validators=[MinLengthValidator(50)])
     author=models.ForeignKey(Author,on_delete=models.SET_NULL,related_name="posts",null=True)
+    tags= models.ManyToManyField(Tags)
 
     def __str__(self):
         return f"{self.title} ,{self.date}"
